@@ -19,7 +19,7 @@ if(isset($_POST["email"]) && isset($_POST["password"])){
 
     // Validate logins
     foreach($usersXML as $user){
-        if($user->email == $email && $user->password == $password){
+        if($user->email == $email && strtolower($user->password) == strtolower(md5($password))){
             $isValid = true;
             break;
         }

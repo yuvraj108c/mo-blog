@@ -1,7 +1,7 @@
 <?php
 
 $USERS_PATH_XML = "data/users.xml";
-$USERS_PATH_XSD = "data/users.xsd";
+$USERS_PATH_XSD = "data/xsd/users.xsd";
 
 if(isset($_POST["username"]) && isset($_POST["email"]) && isset($_POST["password"])){
     $username = $_POST["username"];
@@ -45,7 +45,7 @@ if(isset($_POST["username"]) && isset($_POST["email"]) && isset($_POST["password
         $userElem->appendChild($idAttr);
         $usernameElem = $doc->createElement("username", $username);
         $emailElem = $doc->createElement("email", $email);
-        $passwordElem = $doc->createElement("password", $password);
+        $passwordElem = $doc->createElement("password", strtolower(md5($password)));
         
         $userElem->appendChild($usernameElem);
         $userElem->appendChild($emailElem);

@@ -3,26 +3,16 @@
     <user id="1">
         <username>John</username>
         <email>john@gmail.com</email>
-        <password>12345</password>
+        <password>827CCB0EEA8A706C4C34A16891F84E7B</password>
     </user>
     <user id="2">
-        <username>johnffff</username>
-        <email>john@gmail.comffff</email>
-        <password>12345</password>
-    </user>
-    <user id="3">
-        <username>johnfffff</username>
-        <email>john@gmail.comfffff</email>
-        <password>12345</password>
-    </user>
-    <user id="4">
-        <username>johnffffff</username>
-        <email>john@gmail.comffffff</email>
-        <password>12345</password>
-    </user>
-    <user id="5">
         <username>johnfffffff</username>
         <email>john@gmail.comfffffff</email>
-        <password>12345</password>
+        <password>827ccb0eea8a706c4c34a16891f84e7b</password>
+    </user>
+    <user id="3">
+        <username>1john</username>
+        <email>john@gmail.com1</email>
+        <password>827ccb0eea8a706c4c34a16891f84e7b</password>
     </user>
 </users>
