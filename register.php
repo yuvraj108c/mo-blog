@@ -42,6 +42,8 @@
         }
     ?>
 
+    <?php include "includes/navbar.php"; ?>
+
     <section id="register">
 
         <div class="right">
@@ -86,7 +88,7 @@
                                     <input type="password" name="pwd2" placeholder="Confirm password" value="<?php echo($pwd2)?>"  required>
                                 </div>
                             </div>
-
+<br>
 
                             <!-- Message -->
                             <?php echo Messages::display(); ?>

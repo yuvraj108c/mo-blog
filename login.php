@@ -2,12 +2,8 @@
     require "includes/classes/Header.php";
     $header = new Header("Login","login.css");
     $header->output();
-?>
 
-<body>
-
-    <?php 
-        require "includes/classes/Constants.php";
+    require "includes/classes/Constants.php";
         require "includes/classes/Account.php";
         require "includes/classes/Messages.php";
 
@@ -29,7 +25,11 @@
                 header("Location: dashboard.php");
             }
         }
-    ?>
+?>
+
+<body>
+
+    <?php include "includes/navbar.php"; ?>
 
     <section id="login">
 

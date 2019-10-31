@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Welcome to mo-blog.</title>
-</head>
+<?php
+    require("includes/classes/Header.php");
+
+    $header = new Header("mo-blog","");
+    $header->output();
+?>
 <body>
-    <h1>MO-BLOG</h1>
+    <?php include "includes/navbar.php"; ?>
+    <h1>Index or hompage</h1>
 </body>
 </html>
