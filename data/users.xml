@@ -6,13 +6,8 @@
         <password>827CCB0EEA8A706C4C34A16891F84E7B</password>
     </user>
     <user id="2">
-        <username>johnfffffff</username>
-        <email>john@gmail.comfffffff</email>
-        <password>827ccb0eea8a706c4c34a16891f84e7b</password>
-    </user>
-    <user id="3">
-        <username>1john</username>
-        <email>john@gmail.com1</email>
-        <password>827ccb0eea8a706c4c34a16891f84e7b</password>
+        <username>test</username>
+        <email>test@gmail.com</email>
+        <password>202cb962ac59075b964b07152d234b70</password>
     </user>
 </users>
