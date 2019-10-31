@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+
+<posts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/posts.xsd">
+
+    <post id="1">
+        <title>Post 1</title>
+        <description>This is a description.</description>
+        <category>Food</category>
+        <image-url>https://kinsta.com/wp-content/uploads/2017/04/change-wordpress-url-1.png</image-url>
+        <created-by>John Doe</created-by>
+        <created-on>2019-10-10</created-on>
+    </post>
+
+    <post id="2">
+        <title>Post 1</title>
+        <description>This is a description.</description>
+        <category>Food</category>
+        <image-url>https://kinsta.com/wp-content/uploads/2017/04/change-wordpress-url-1.png</image-url>
+        <created-by>John Doe</created-by>
+        <created-on>2019-10-10</created-on>
+    </post>
+
+</posts>
