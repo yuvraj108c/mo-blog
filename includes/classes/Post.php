@@ -23,16 +23,28 @@ class Post{
                         </div>
                     <div class='content'>
                         <div class='header'>".$p->title ."</div>
+                        <div class='meta'>
+                            <span class='cinema'>By ".$p->author ."</span>
+                        </div>
                         <div class='description'>
                             <p>".$p->description ."</p>
                         </div>
-                    <div class='meta'>
-                        <span class='author'>".$p->author ."</span>
-                        <span class='date'>".$p->createdOn ."</span>
+                    <div class='extra'>
+                        <span class='date'>
+                            <i class='left calendar icon'></i>
+                            ".$p->createdOn ."
+                        </span>
+                        <span class='ui label'>".$p->category ."</span>
+                        <div class='ui right floated red small button'>
+                            Delete
+                        </div>
+                        <div class='ui right floated teal small button'>
+                            Edit
+                        </div>
                     </div>
                   </div>
                 </div>";
+            }
         }
-}
     }
 }
