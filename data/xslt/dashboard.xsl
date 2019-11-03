@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:template match="/">
+        <html>
+            <!-- Link to Semantic UI CDN-->
+            <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css" />
+            <link rel="stylesheet" type="text/css" href="./assets/css/dashboard.css" />
+            <body>
+                <!-- Loop through xml nodes to display posts-->
+                <xsl:for-each select="posts/post">
+                    <div class="ui divided items">
+                        <div class="item">
+                            <div class="ui small image">
+                                <img src="{imageUrl}" />
+                            </div>
+                            <div class="content">
+                                <div class="header">
+                                    <xsl:value-of select="title" />
+                                </div>
+                                <div class="meta">
+                                    <span class="cinema">
+                                        By
+                                        <xsl:value-of select="author" />
+                                    </span>
+                                </div>
+                                <div class="description">
+                                    <p>
+                                        <xsl:value-of select="description" />
+                                    </p>
+                                </div>
+                                <div class="extra">
+                                    <span class="date">
+                                        <i class="left calendar icon"></i>
+                                        <xsl:value-of select="createdOn" />
+                                    </span>
+                                    <span class="ui label">
+                                        <xsl:value-of select="category" />
+                                    </span>
+                                    <div class="ui right floated red small button">
+                                Delete
+                            </div>
+                                    <div class="ui right floated teal small button">
+                                Edit
+                            </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xsl:for-each>
+                <!-- End of Loop-->
+            </body>
+        </html>
+    </xsl:template>
+</xsl:stylesheet>
