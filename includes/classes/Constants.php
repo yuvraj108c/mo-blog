@@ -3,6 +3,7 @@ class Constants
 {
     // Path
     public static $usersXmlPath = "data/users.xml";
+    public static $postsXmlPath = "data/posts.xml";
     public static $usersXsdPath = "data/xsd/users.xsd";
 
     //Login
