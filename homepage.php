@@ -3,11 +3,6 @@
     require("includes/classes/Header.php");
     session_start();
 
-    // Redirect to homepage if user not logged in
-    if(!isset($_SESSION["userLoggedIn"])){
-        header("Location: index.php");
-    }
-    
     $header = new Header("homepage","dashboard.css");
     $header->output();
 ?>

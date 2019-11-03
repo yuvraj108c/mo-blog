@@ -6,4 +6,4 @@ define("ROOT_URL", "http://localhost/mo-blog/");
 unset($_SESSION['userLoggedIn']);
 
 // Go to homepage
-header("Location: " . ROOT_URL . "index.php");
+header("Location: " . ROOT_URL . "homepage.php");
