@@ -1,5 +1,4 @@
-<?xml version="1.0" ?>
-
+<?xml version="1.0"?>
 <posts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/posts.xsd">
 
     <post id="1">
@@ -20,4 +19,21 @@
         <createdOn>2019-10-10</createdOn>
     </post>
 
+    <post id="3">
+        <title>Sam</title>
+        <description>test</description>
+        <category>Eucation</category>
+        <image-url>education.com</image-url>
+        <created-by>John</created-by>
+        <created-on>2019-11-02</created-on>
+    </post>
+    
+    <post id="4">
+        <title>PHP</title>
+        <description>PHP is a server-side language</description>
+        <category>Education</category>
+        <image-url>uom.com</image-url>
+        <created-by>John</created-by>
+        <created-on>2019-11-02</created-on>
+    </post>
 </posts>
