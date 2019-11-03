@@ -25,7 +25,7 @@
             } else  {
                 //Display logout
                 echo "<div class='buttons'>";
-                echo "<a class='ui  grey button' href='dashboard.php'>Dashboard</a>";
+                echo "<a class='ui teal button' href='dashboard.php'>Dashboard</a>";
                 echo "<a class='ui basic grey button' href='includes/handlers/logout-handler.php'>Log out</a>";
                 echo "</div>";
             }
