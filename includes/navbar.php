@@ -7,14 +7,8 @@
         <!-- Logo -->
         <div class="logo">
             <?php
-                // Change url to homepage or dashboard
-                $url = "";
+                $url = $url = ROOT_URL . "homepage.php";;
 
-                if (!isset($_SESSION['userLoggedIn'])) {
-                    $url = ROOT_URL;
-                }else{
-                    $url = ROOT_URL . "dashboard.php";
-                }
                 echo "<a href='".$url."'><span id='subLogo'>mo&nbsp;</span>-blog</a>";
             ?>
         </div>
@@ -31,6 +25,7 @@
             } else  {
                 //Display logout
                 echo "<div class='buttons'>";
+                echo "<a class='ui teal button' href='dashboard.php'>Dashboard</a>";
                 echo "<a class='ui basic grey button' href='includes/handlers/logout-handler.php'>Log out</a>";
                 echo "</div>";
             }
