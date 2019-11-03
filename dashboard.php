@@ -20,11 +20,28 @@
         <?php 
             require "includes/classes/Constants.php";
             require "includes/classes/Post.php";
+
+            $POST = new Post();
+            $myPosts = $POST->getPostsByUsername($_SESSION["userLoggedIn"]);
             
-            $post = new Post();
-            $userPosts = $post->getPostsByUsername($_SESSION["userLoggedIn"]);
-            
-            $post->outputPosts($userPosts);
+            if(!$myPosts){
+                echo "Create a post to get started!";
+            }else{
+                // Load XML file
+                $xml = new DOMDocument;
+                $xml->loadXML($myPosts);
+
+                // Load XSL file
+                $xsl = new DOMDocument;
+                $xsl->load('./data/xslt/dashboard.xsl');
+                
+                // Configure the transformer
+                $proc = new XSLTProcessor();
+                
+                // Attach the xsl rules
+                $proc->importStyleSheet($xsl);
+                echo $proc->transformToXML($xml);
+            }
         ?>
 
         </div>
