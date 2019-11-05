@@ -1,6 +1,16 @@
 <?xml version="1.0" ?>
 <posts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/posts.xsd">
 
+
+    <post>
+        <id>2</id>
+        <title>Test Post</title>
+        <description>Thisis a descriptoin"</description>
+        <category>Music</category>
+        <imageUrl>https://voicesofbaltimorecom.files.wordpress.com/2018/07/news.jpg</imageUrl>
+        <author>John</author>
+        <createdOn>2019-11-05</createdOn>
+    </post>
     <post>
         <id>3</id>
         <title>Test Post</title>
@@ -10,5 +20,13 @@
         <author>John</author>
         <createdOn>2019-11-05</createdOn>
     </post>
-
+    <post>
+        <id>4</id>
+        <title>Test Post</title>
+        <description>Thisis a descriptoin"</description>
+        <category>Music</category>
+        <imageUrl>https://voicesofbaltimorecom.files.wordpress.com/2018/07/news.jpg</imageUrl>
+        <author>John</author>
+        <createdOn>2019-11-05</createdOn>
+    </post>
 </posts>
