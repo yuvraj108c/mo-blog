@@ -36,12 +36,12 @@
                                     <span class="ui label">
                                         <xsl:value-of select="category" />
                                     </span>
-                                    <div class="ui right floated red small button">
-                                Delete
-                            </div>
-                                    <div class="ui right floated teal small button">
+                                    <a class="ui right floated red small button" href="includes/handlers/delete-handler.php?id={id}">
+                                        Delete
+                                    </a>
+                                    <a class="ui right floated teal small button">
                                 Edit
-                            </div>
+                            </a>
                                 </div>
                             </div>
                         </div>
