@@ -4,6 +4,7 @@ class Constants
     // Path
     public static $root = "http://localhost/mo-blog/";
     public static $postsXmlPath = "data/posts.xml";
+    public static $usersXmlPath = "data/users.xml";
     public static $usersXsdPath = "data/xsd/users.xsd";
     public static $postsXsdPath = "data/xsd/posts.xsd";
 
