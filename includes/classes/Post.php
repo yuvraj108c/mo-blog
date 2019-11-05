@@ -12,6 +12,7 @@ class Post{
                 $hasPosts = true;
 
                 $p = $xml->addChild("post");
+                $p->addChild("id", $post->id);
                 $p->addChild("title", $post->title);
                 $p->addChild("description", $post->description);
                 $p->addChild("category", $post->category);
@@ -28,41 +29,52 @@ class Post{
         }
     }
     public function createPost($title,$descri,$cat,$imgUrl,$username){
-        $users = simplexml_load_file(Constants::$postsXmlPath);
+        // Update xml file
+        $doc = new DOMDocument();
+        $doc->load(Constants::$postsXmlPath);
+        
+        $postElem = $doc->createElement("post");
+        
+        $idElem = $doc->createElement("id", sizeof($doc->getElementsByTagName("post")) + 1);
+        $titleElem = $doc->createElement("title", $title);
+        $descriElem = $doc->createElement("description", $descri);
+        $catElem = $doc->createElement("category", $cat);
+        $urlElem = $doc->createElement("imageUrl", $imgUrl);
+        $createByElem = $doc->createElement("author",$username);
+        $createOnElem = $doc->createElement("createdOn",date("Y-m-d"));
+        
+        $postElem->appendChild($idElem);
+        $postElem->appendChild($titleElem);
+        $postElem->appendChild($descriElem);
+        $postElem->appendChild($catElem);
+        $postElem->appendChild($urlElem);
+        $postElem->appendChild($createByElem);
+        $postElem->appendChild($createOnElem);
 
-            // Update xml file
-            $doc = new DOMDocument();
-            $doc->load(Constants::$postsXmlPath);
-            
-            $postElem = $doc->createElement("post");
-            $idAttr = $doc->createAttribute("id");
-            $idAttr->value = sizeof($doc->getElementsByTagName("post")) + 1;
-            
-            $postElem->appendChild($idAttr);
-            $titleElem = $doc->createElement("title", $title);
-            $descriElem = $doc->createElement("description", $descri);
-            $catElem = $doc->createElement("category", $cat);
-            $urlElem = $doc->createElement("imageUrl", $imgUrl);
-            $createByElem = $doc->createElement("author",$username);
-            $createOnElem = $doc->createElement("createdOn",date("Y-m-d"));
-            
-            $postElem->appendChild($titleElem);
-            $postElem->appendChild($descriElem);
-            $postElem->appendChild($catElem);
-            $postElem->appendChild($urlElem);
-            $postElem->appendChild($createByElem);
-            $postElem->appendChild($createOnElem);
+        $doc->getElementsByTagName("posts")[0]->appendChild($postElem);
 
-            $doc->getElementsByTagName("posts")[0]->appendChild($postElem);
+        if (!$doc->schemaValidate(Constants::$postsXsdPath)) {
+            // Invalid xml
+            array_push($this->errorArray, Constants::$invalidXmlFile);
+            return false;
+        }else{
+            // Save file
+            $doc->save(Constants::$postsXmlPath);
+            return true; 
+        }
+    }
+    
+    public function deletePost($id){
+        $postsXML = simplexml_load_file(Constants::$root . Constants::$postsXmlPath);
+        $count=0;
 
-           if (!$doc->schemaValidate(Constants::$postsXsdPath)) {
-                // Invalid xml
-                array_push($this->errorArray, Constants::$invalidXmlFile);
-                return false;
-            }else{
-               // Save file
-                $doc->save(Constants::$postsXmlPath);
-                return true; 
+        foreach($postsXML as $p){
+            if($p->id == $id){
+                unset($postsXML->post[$count]);
             }
-         }
+            $count++;
+        }
+
+        $postsXML->asXML("../../".Constants::$postsXmlPath);
+    }
 }
