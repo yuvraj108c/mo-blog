@@ -28,6 +28,16 @@ class Post{
             return false;
         }
     }
+
+    public function getPostById($id){
+        $postsXML = simplexml_load_file(Constants::$postsXmlPath);
+        foreach($postsXML as $post){
+            if($post->id == $id){
+                return $post;
+            }
+        }
+    }
+
     public function createPost($title,$descri,$cat,$imgUrl,$username){
         // Update xml file
         $doc = new DOMDocument();
@@ -64,6 +74,20 @@ class Post{
             $doc->save(Constants::$postsXmlPath);
             return true; 
         }
+    }
+
+    public function updatePost($id,$title,$descri,$cat,$imgURL){
+        $postsXML = simplexml_load_file(Constants::$root .Constants::$postsXmlPath);
+
+        foreach($postsXML as $p){
+            if($p->id == $id){
+                $p->title=$title;
+                $p->description=$descri;
+                $p->category=$cat;
+                $p->imageUrl=$imgURL;
+            }
+        }
+        $postsXML->asXML("../../".Constants::$postsXmlPath);
     }
     
     public function deletePost($id){
