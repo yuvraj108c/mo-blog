@@ -39,7 +39,7 @@
                                     <a class="ui right floated red small button" href="includes/handlers/delete-handler.php?id={id}">
                                         Delete
                                     </a>
-                                    <a class="ui right floated teal small button">
+                                    <a class="ui right floated teal small button" href="edit.php?id={id}">
                                 Edit
                             </a>
                                 </div>
