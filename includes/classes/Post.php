@@ -34,8 +34,10 @@ class Post{
         $doc->load(Constants::$postsXmlPath);
         
         $postElem = $doc->createElement("post");
+        $countPosts = sizeof($doc->getElementsByTagName("post"));
+        $lastPost = $doc->getElementsByTagName("post")[$countPosts-1];
         
-        $idElem = $doc->createElement("id", sizeof($doc->getElementsByTagName("post")) + 1);
+        $idElem = $doc->createElement("id", $lastPost->getElementsByTagName("id")[0]->nodeValue + 1);
         $titleElem = $doc->createElement("title", $title);
         $descriElem = $doc->createElement("description", $descri);
         $catElem = $doc->createElement("category", $cat);
