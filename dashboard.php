@@ -33,7 +33,7 @@
 
                 // Load XSL file
                 $xsl = new DOMDocument;
-                $xsl->load('./data/xslt/dashboard.xsl');
+                $xsl->load('./data/xslt/dashboard.xslt');
                 
                 // Configure the transformer
                 $proc = new XSLTProcessor();
