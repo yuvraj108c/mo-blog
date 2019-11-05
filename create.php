@@ -24,8 +24,13 @@
             $imgURL =  $_POST['imgURL'];
 
             $create =new Post();
-            $create->createPost($title,$descri,$cat,$imgURL,$username);
-            header("Location:dashboard.php");
+            $success = $create->createPost($title,$descri,$cat,$imgURL,$username);
+
+            if(!$success){
+                echo "Error";
+            }else{
+                header("Location:dashboard.php");
+            }
         }
     ?>
 
