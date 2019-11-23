@@ -38,6 +38,18 @@ class Post{
         }
     }
 
+    public function getPostCategories(){
+        $categories = array();
+        $postsXML = simplexml_load_file(Constants::$postsXmlPath);
+        foreach($postsXML as $post){
+            $c = $post->category[0];
+            if(!in_array($c,$categories)){
+                array_push($categories,$c);
+            }
+        }
+        return $categories;
+    }
+
     public function createPost($title,$descri,$cat,$imgUrl,$username){
         // Update xml file
         $doc = new DOMDocument();
