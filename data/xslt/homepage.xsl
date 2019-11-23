@@ -8,6 +8,7 @@
             <body>
                 <!-- Loop through xml nodes to display posts-->
                 <xsl:for-each select="posts/post">
+                    <xsl:sort select="id" data-type="number" order="descending" />
                     <div class="ui divided items">
                         <div class="item">
                             <div class="ui small image">
