@@ -42,7 +42,18 @@
             <section class="categories">
                 <h2>Categories</h2>
                 <div class="categories">
-                    Music
+                    <?php 
+                        require("includes/classes/Constants.php");
+                        require("includes/classes/Post.php");
+
+                        $Post = new Post();
+                        $categories = $Post->getPostCategories();
+                        
+                        foreach($categories as $c){
+                            $url = "homepage.php?category=" . $c;
+                            echo "<a class='ui label' href='".$url ."'>".$c . "</a>";
+                        }
+                    ?>
                 </div>
             </section>
         </div>
