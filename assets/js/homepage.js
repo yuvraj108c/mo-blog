@@ -22,7 +22,9 @@ function displayPosts() {
 
     let output = "";
 
-    posts.forEach(p => {
+    for (let i = posts.length - 1; i >= 0; i--) {
+      const p = posts[i];
+
       const id = p.getElementsByTagName("id")[0].childNodes[0].nodeValue;
       const title = p.getElementsByTagName("title")[0].childNodes[0].nodeValue;
       const description = p.getElementsByTagName("description")[0].childNodes[0]
@@ -68,7 +70,7 @@ function displayPosts() {
             </div>
     </div>
     </div>`;
-    });
+    }
 
     document.getElementById("posts").innerHTML = output;
   }
