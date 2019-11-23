@@ -8,6 +8,8 @@
 ?>
 
 <body>
+    <script src="assets/js/homepage.js"></script>
+
     <?php include "includes/navbar.php"; ?>
 
     <div class="ui grid">
@@ -58,5 +60,6 @@
             </section>
         </div>
     </div>
+
 </body>
 </html>
