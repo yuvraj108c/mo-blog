@@ -1,0 +1,30 @@
+section.details {
+  margin: 5%;
+}
+
+div.post {
+  width: 70%;
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+}
+
+p.description {
+  line-height: 30px;
+  font-size: 1.3em;
+  margin-top: 5%;
+}
+
+div.meta {
+  margin: 3% 0 5% 0;
+}
+
+div.meta span {
+  margin-right: 3%;
+}
+
+span.ui.label {
+  margin-right: 3%;
+}
