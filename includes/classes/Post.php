@@ -38,11 +38,33 @@ class Post{
         }
     }
 
+    public function getPostsByCategoryAndSaveToFile($c){
+        $postsXML = simplexml_load_file(Constants::$root .Constants::$postsXmlPath);
+        $xml = new SimpleXMLElement("<posts/>");
+
+        foreach($postsXML as $post){
+            if(strtolower($post->category) == strtolower($c)){
+                $hasPosts = true;
+
+                $p = $xml->addChild("post");
+                $p->addChild("id", $post->id);
+                $p->addChild("title", $post->title);
+                $p->addChild("description", $post->description);
+                $p->addChild("category", $post->category);
+                $p->addChild("imageUrl", $post->imageUrl);
+                $p->addChild("author", $post->author);
+                $p->addChild("createdOn", $post->createdOn);
+            }
+        }
+        // Save to temp file
+        $xml->asXML("temp.xml");
+    }
+
     public function getPostCategories(){
         $categories = array();
         $postsXML = simplexml_load_file(Constants::$postsXmlPath);
         foreach($postsXML as $post){
-            $c = $post->category[0];
+            $c = $post->category->__toString();
             if(!in_array($c,$categories)){
                 array_push($categories,$c);
             }
