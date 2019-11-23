@@ -15,7 +15,9 @@
                             </div>
                             <div class="content">
                                 <div class="header">
-                                    <xsl:value-of select="title" />
+                                    <a href="details.php?id={id}">
+                                        <xsl:value-of select="title" />
+                                    </a>
                                 </div>
                                 <div class="meta">
                                     <span class="cinema">
