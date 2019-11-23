@@ -24,8 +24,13 @@ section.categories {
 }
 
 div.categories {
-  border: 1px solid gray;
+  border: 1px solid #80808054;
   padding: 5%;
   width: 70%;
   height: 100px;
+  border-radius: 5px;
+}
+
+a.ui.label {
+  margin-bottom: 10px;
 }
