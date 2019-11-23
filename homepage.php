@@ -18,24 +18,27 @@
             <section class="posts">
                 <h2>Recent posts</h2>
                 <div class="ui container">
-                <?php
+                    <?php 
+                        if(!isset($_GET["category"])){
+                            // Load XML file
+                            $xml = new DOMDocument;
+                            $xml->load('./data/posts.xml');
                     
-                    // Load XML file
-                    $xml = new DOMDocument;
-                    $xml->load('./data/posts.xml');
-            
-                    // Load XSL file
-                    $xsl = new DOMDocument;
-                    $xsl->load('./data/xslt/homepage.xsl');
-            
-                    // Configure the transformer
-                    $proc = new XSLTProcessor();
-            
-                    // Attach the xsl rules
-                    $proc->importStyleSheet($xsl);
-            
-                    echo $proc->transformToXML($xml);
-                ?> 
+                            // Load XSL file
+                            $xsl = new DOMDocument;
+                            $xsl->load('./data/xslt/homepage.xsl');
+                    
+                            // Configure the transformer
+                            $proc = new XSLTProcessor();
+                    
+                            // Attach the xsl rules
+                            $proc->importStyleSheet($xsl);
+                    
+                            echo $proc->transformToXML($xml);
+                        }else{
+                            echo "<div class = 'ui divided items' id='posts'></div>";
+                        }
+                    ?>
                 </div>
             </section>
         </div>
@@ -50,10 +53,21 @@
 
                         $Post = new Post();
                         $categories = $Post->getPostCategories();
+
+                        $category = null;
+                        
+                        if(isset($_GET["category"])){
+                            $category = $_GET["category"];
+                        }
                         
                         foreach($categories as $c){
                             $url = "homepage.php?category=" . $c;
-                            echo "<a class='ui label' href='".$url ."'>".$c . "</a>";
+                            
+                            if($category && $c == $category){
+                                echo "<a class='ui teal label' href='".$url ."'>".$c . "</a>";
+                            }else{
+                                echo "<a class='ui label' href='".$url ."'>".$c . "</a>";
+                            }
                         }
                     ?>
                 </div>
