@@ -1,14 +1,30 @@
-const url = window.location.href;
-const index = url.indexOf("category=");
+document.addEventListener("DOMContentLoaded", e => {
+  const categoryBtn = document.getElementsByClassName("category");
+  let http;
+  let currentBtn = "";
 
-let http = new XMLHttpRequest();
-if (index > 0) {
-  const category = url.slice(47, url.length);
-  const url2 =
+  Array.from(categoryBtn).forEach(b => {
+    setInterval(() => {
+      if (b.textContent !== currentBtn) {
+        b.classList.remove("teal");
+      }
+    }, 100);
+
+    b.addEventListener("click", e => {
+      e.target.classList.add("teal");
+      getPosts(e.target.textContent);
+      currentBtn = e.target.textContent;
+    });
+  });
+});
+
+function getPosts(category) {
+  http = new XMLHttpRequest();
+  let url =
     "http://localhost/mo-blog/includes/handlers/category-handler.php?category=" +
     category;
 
-  http.open("GET", url2, true);
+  http.open("GET", url, true);
 
   http.onreadystatechange = displayPosts;
 
@@ -20,7 +36,7 @@ function displayPosts() {
     const doc = http.responseXML;
     const posts = doc.getElementsByTagName("posts")[0].childNodes;
 
-    let output = "";
+    let output = "<div class = 'ui divided items'>";
 
     for (let i = posts.length - 1; i >= 0; i--) {
       const p = posts[i];
@@ -69,9 +85,12 @@ function displayPosts() {
             </span>
             </div>
     </div>
-    </div>`;
+    </div>
+    `;
     }
 
-    document.getElementById("posts").innerHTML = output;
+    output += "</div>";
+
+    document.getElementById("content").innerHTML = output;
   }
 }
