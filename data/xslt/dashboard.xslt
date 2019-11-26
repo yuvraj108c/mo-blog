@@ -6,10 +6,10 @@
             <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css" />
             <link rel="stylesheet" type="text/css" href="./assets/css/dashboard.css" />
             <body>
-                <!-- Loop through xml nodes to display posts-->
-                <xsl:for-each select="posts/post">
-                    <xsl:sort select="id" data-type="number" order="descending" />
-                    <div class="ui divided items">
+                <div class="ui divided items">
+                    <!-- Loop through xml nodes to display posts-->
+                    <xsl:for-each select="posts/post">
+                        <xsl:sort select="id" data-type="number" order="descending" />
                         <div class="item">
                             <div class="ui small image">
                                 <img src="{imageUrl}" />
@@ -48,8 +48,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </xsl:for-each>
+                    </xsl:for-each>
+                </div>
                 <!-- End of Loop-->
             </body>
         </html>
