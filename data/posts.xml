@@ -1,4 +1,4 @@
-<?xml version="1.0" ?>
+<?xml version="1.0"?>
 <posts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/posts.xsd">
 
 
@@ -38,4 +38,4 @@ Quisque risus dolor, semper nec consequat sed, efficitur vitae nisi. Morbi rutru
     </post>
 
 
-</posts>
+<post><id>8</id><title>Test Post</title><description>Thisis a descriptoin"</description><category>Music</category><imageUrl>https://voicesofbaltimorecom.files.wordpress.com/2018/07/news.jpg</imageUrl><author>John</author><createdOn>2019-11-26</createdOn></post><post><id>9</id><title>Test Post 3</title><description>Thisis a descriptoin"</description><category>Music</category><imageUrl>https://voicesofbaltimorecom.files.wordpress.com/2018/07/news.jpg</imageUrl><author>John</author><createdOn>2019-11-26</createdOn></post><post><id>10</id><title>Test Post 2</title><description>Thisis a descriptoin"</description><category>Education</category><imageUrl>https://voicesofbaltimorecom.files.wordpress.com/2018/07/news.jpg</imageUrl><author>John</author><createdOn>2019-11-26</createdOn></post></posts>
