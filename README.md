@@ -17,4 +17,6 @@ A fully-fledged blog system that supports create/read/update/delete posts.
 
 ## Stack
 - Php
-- mySQL
+- XML as database
+- XSD to validate XML
+- Ajax
