@@ -1,5 +1,7 @@
 # mo-blog
-A fully-fledged blog system that supports create/read/update/delete posts.
+- A fully-fledged blog system that supports create/read/update/delete posts.
+- Team: Yuvraj Seegolam & Kaviraj Gosaye
+- Assignment for web module
 
 ## Unauthenticated User
 - View all posts
@@ -19,4 +21,5 @@ A fully-fledged blog system that supports create/read/update/delete posts.
 - Php
 - XML as database
 - XSD to validate XML
-- Ajax
+- XSLT for styling
+- Ajax for asynchronous data fetching
